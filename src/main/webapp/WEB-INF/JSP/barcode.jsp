@@ -8,7 +8,7 @@
 <body>
 
 <p align=left>
-	<img alt="Barcode image" src="<c:url value="/${barcodeUrl}"/>"/><br/>
+	<img alt="Barcode image" src="<c:url value="${barcodeUrl}"/>"/><br/>
 	${barcodeText}
 </p>
 
