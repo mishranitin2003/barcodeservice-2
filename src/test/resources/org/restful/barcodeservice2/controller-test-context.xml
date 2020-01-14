@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+						http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+						http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<!-- Supported barcodeservice2 types -->
+	<util:map id="supportedBarcodeFormats">
+		<entry key="code128" value="#{T(com.google.zxing.BarcodeFormat).CODE_128}" />
+		<entry key="qrcode" value="#{T(com.google.zxing.BarcodeFormat).QR_CODE}" />
+		<entry key="code39" value="#{T(com.google.zxing.BarcodeFormat).CODE_39}" />
+		<entry key="datamatrix" value="#{T(com.google.zxing.BarcodeFormat).DATA_MATRIX}" />
+		<entry key="ean13" value="#{T(com.google.zxing.BarcodeFormat).EAN_13}" />
+		<entry key="pdf417" value="#{T(com.google.zxing.BarcodeFormat).PDF_417}" />
+		<entry key="codeabar" value="#{T(com.google.zxing.BarcodeFormat).CODABAR}" />
+	</util:map>
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+	<context:component-scan base-package="org.restful.barcodeservice2" />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+</beans>
