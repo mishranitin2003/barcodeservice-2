@@ -7,7 +7,7 @@ Deployment Steps:
 - Checkout the project
 - Run to create WAR
     mvn clean install
-- Deploy in tomcat with at least JEE 6 profile (Servlet 3.0)
+- Deploy in tomcat or any other Application server like Wildfly with at least JEE 6 profile (Servlet 3.0)
 
 Use a link in browser:
         &lt;ServerContext&gt;/code39/12345678
