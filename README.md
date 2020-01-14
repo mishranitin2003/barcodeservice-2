@@ -10,5 +10,5 @@ Deployment Steps:
 - Deploy in tomcat with at least JEE 6 profile (Servlet 3.0)
 
 Use a link in browser:
-<Server Context>/code39/12345678
+        ServerContext/code39/12345678
 Use any username and password as 'password' for now
